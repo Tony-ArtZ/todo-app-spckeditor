@@ -1,0 +1,95 @@
+body {
+    font-size: 15pt;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+#inp-section{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+  position: relative;
+  margin-bottom:5%;
+  height: 15rem;
+  border-bottom-left-radius: 75px;
+  border-bottom-right-radius: 75px;
+  background-color: royalblue;
+  filter: drop-shadow(2px 2px 15px royalblue)
+}
+.task-input{
+  border-radius: 25px;
+  padding-left: 15px;
+  width: 82%;
+  outline:none;
+  height: 50px;
+  background: white;
+  border-color: white;
+  border-style: solid;
+  border-width: 0px;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 2px 2px 10px royalblue inset;
+}
+.checked{
+  text-decoration: line-through 2px royalblue;
+}
+.task-add-button{
+  border-radius: 100%;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 50%;
+  left: 82%;
+  border: 0px solid black;
+  font-weight: normal;
+  color: royalblue;
+  font-size: 25px;
+  background-color: white;
+  filter: drop-shadow(2px 2px 15px royalblue);
+}
+.task{
+  display: flex;
+  width: 100%;
+  margin: 5% 0% 5% 0%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.task-item{
+  border-radius: 25px;
+  padding-left: 50px;
+  box-sizing:border-box;
+  width: 85%;
+  height: 50px;
+  background: white;
+  border-color: white;
+  border-style: solid;
+  border-width: 0px;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  filter: drop-shadow(1px 1px 5px royalblue);
+  outline: none;
+}
+.task-delete {
+  border-radius: 100%;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 50%;
+  left: 82%;
+  border: 0px solid black;
+  color: royalblue;
+  font-size: 25px;
+  background-color: white;
+  box-shadow: 1px 1px 5px royalblue inset;
+  font-family: monospace;
+}
+.task-checkBox{
+  position: absolute;
+  left: 8%;
+  width: 50px;
+}
