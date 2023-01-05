@@ -1,6 +1,5 @@
 class TASK {
-  constructor(id, task, checked) {
-    this.id = id;
+  constructor(task, checked) {
     this.task = task;
     this.checked = checked;
   }
@@ -25,7 +24,7 @@ const update = () => {
   taskView = document.createElement("section")
   taskView.id = "task-section"
   body.append(taskView)
-  currTasks?.forEach((tasks) => {
+  currTasks?.forEach((tasks, index) => {
     const container = document.createElement("div")
     container.classList.add("task")
     const input = document.createElement("input")
@@ -38,7 +37,7 @@ const update = () => {
     deleteButton.innerText = "x"
     deleteButton.classList.add("task-delete")
     deleteButton.addEventListener("click", (e) => {
-      currTasks=currTasks.filter((item)=>{return item.id != tasks.id})
+      currTasks=currTasks.filter((item, itemIndex)=>{return itemIndex != index})
       setTasks(currTasks)
       update()
     })
@@ -49,7 +48,7 @@ const update = () => {
     checkBox.checked = tasks.checked
     checkBox.checked?input.classList.add("checked"):input.classList.remove("checked")
     checkBox.addEventListener("change",(e)=>{
-  currTasks[tasks.id].checked=checkBox.checked
+  currTasks[index].checked=checkBox.checked
   setTasks(currTasks)
   update()
     })
@@ -62,7 +61,7 @@ update()
 
 button.addEventListener("click", () => {
   if(input.value != ""){
-  const task = new TASK(currTasks.length, input.value, false)
+  const task = new TASK(input.value, false)
   currTasks.push(task)
   setTasks(currTasks)
   input.value = ""
